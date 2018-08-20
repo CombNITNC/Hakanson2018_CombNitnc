@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using System;
 
 public class MoneyManager : MonoBehaviour {
 	private int money;
+	[SerializeField] private Text textMoney;
 
 	// Use this for initialization
 	void Start () {
@@ -17,13 +20,19 @@ public class MoneyManager : MonoBehaviour {
 
 	public void AddMoney(int x){
 		money += x;
+		Draw();
 	}
 
 	public void ChangeMoney(int x){
 		money = x;
+		Draw();
 	}
 
 	public int GetMoney(){
 		return money;
+	}
+
+	private void Draw(){
+		textMoney.text = money.ToString();
 	}
 }
