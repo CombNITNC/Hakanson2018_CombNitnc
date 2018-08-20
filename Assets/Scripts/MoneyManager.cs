@@ -33,6 +33,6 @@ public class MoneyManager : MonoBehaviour {
 	}
 
 	private void Draw(){
-		textMoney.text = money.ToString();
+		textMoney.text = "¥" + money.ToString();
 	}
 }
