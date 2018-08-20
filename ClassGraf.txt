@@ -15,7 +15,6 @@ MoneyManager
 VMMmanager
     キー入力による自販機での購入、お金の投入管理
 
-
 CanManager
     缶がぶっ飛ぶ。消える（蓄積する？）
 
