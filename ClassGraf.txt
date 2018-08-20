@@ -1,0 +1,28 @@
+Gamemanager
+    ゲーム全体の進行,管理
+
+MoneyManager
+    お金の管理
+        void AddMoney(int x);
+            お金をx円足す (-x円の場合引く)
+
+        void ChangeMoney(int x);
+            お金をx円にする
+
+        int GetMoney();
+            返り値に金額を返す
+
+VMMmanager
+    キー入力による自販機での購入、お金の投入管理
+
+
+CanManager
+    缶がぶっ飛ぶ。消える（蓄積する？）
+
+CoinManager
+    コインの投入動作
+
+TimeManager
+    時間管理
+
+
