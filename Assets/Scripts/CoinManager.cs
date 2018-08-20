@@ -3,6 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CoinManager : MonoBehaviour {
+	public enum CoinList{
+		Coin10,
+		Coin100,
+		none,
+	}
+	[SerializeField] CoinList KindofCoin = CoinList.none;
+
 	private MoneyManager moneyManagerScript;
 	
 	// Use this for initialization
@@ -16,7 +23,17 @@ public class CoinManager : MonoBehaviour {
 	}
 
 	public void CoinDestroy(){
-		moneyManagerScript.AddMoney(100);
+		switch (KindofCoin.ToString()){
+			case "Coin10":
+				moneyManagerScript.AddMoney(10);
+				break;
+			case "Coin100":
+				moneyManagerScript.AddMoney(100);
+				break;
+			default:
+				return;
+		}
+
 		Destroy(this.gameObject);
 	}
 }
