@@ -15,6 +15,9 @@ public class GameManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {	
 		Run();
+		
+		// Debug お金を1000円に固定
+		// moneyManagerScript.ChangeMoney(1000);
 	}
 
 	private void Run(){
