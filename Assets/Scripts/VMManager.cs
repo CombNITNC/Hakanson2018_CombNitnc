@@ -10,7 +10,9 @@ public class VMManager : MonoBehaviour {
 	[SerializeField] private Text[] keyText;
 	private GameObject canEntryPoint;
 	private int num_q;
+	private int num_oldq;
 	private int count;
+	
 
 	private struct Can {
 		public string key;
@@ -37,7 +39,7 @@ public class VMManager : MonoBehaviour {
 		product[5] = new Can("x", 300);
 
 
-		SetProduct();
+		num_oldq = SetProduct();
 	}
 	
 	// Update is called once per frame
@@ -51,21 +53,28 @@ public class VMManager : MonoBehaviour {
 					// 指定キーの入力で商品を購入
 					if(i == num_q){
 						count++;
-						SetProduct();
+						num_oldq = SetProduct();
 					}
 				}
 			}
 		}
 	}
 	
-	private void  SetProduct(){
+	private int  SetProduct(){
 		// 購入キーの設定
 		num_q= Random.Range(0,product.Length);
+		
+		if(num_q == num_oldq){
+			if(num_q == product.Length - 1) num_q = 0;
+			else num_q++;
+		}
 
 		// 表示
 		for(int i = 0; i < keyText.Length; i++){
 			keyText[i].text = "Press [" + product[num_q].key + "]\n¥" + product[num_q].price;
 		}
+
+		return num_q;
 	}
 
 	public int GetCount(){
