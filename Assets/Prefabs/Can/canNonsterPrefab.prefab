@@ -9,46 +9,74 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1592230911398044}
+  m_RootGameObject: {fileID: 1437143176842484}
   m_IsPrefabAsset: 1
---- !u!1 &1592230911398044
+--- !u!1 &1437143176842484
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4397243237933164}
-  - component: {fileID: 33360604427601260}
-  - component: {fileID: 23833092599498816}
-  - component: {fileID: 114707743217246728}
-  - component: {fileID: 95466832626542992}
+  - component: {fileID: 4361537913487642}
+  - component: {fileID: 114708953815783394}
   m_Layer: 0
-  m_Name: coin100_Prefab
+  m_Name: canNonsterPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4397243237933164
+--- !u!1 &1588570712092172
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4350445463438396}
+  - component: {fileID: 33637496178174868}
+  - component: {fileID: 23970783960632896}
+  m_Layer: 0
+  m_Name: canNonster
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4350445463438396
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1592230911398044}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.66, y: -2.75, z: -1.79}
-  m_LocalScale: {x: 200, y: 200, z: 5}
+  m_GameObject: {fileID: 1588570712092172}
+  m_LocalRotation: {x: -0.6122656, y: -0.3536151, z: -0.3534917, w: 0.6124793}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 20, y: 20.000011, z: 60}
   m_Children: []
+  m_Father: {fileID: 4361537913487642}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -89.98, y: -60, z: 0}
+--- !u!4 &4361537913487642
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1437143176842484}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4350445463438396}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23833092599498816
+--- !u!23 &23970783960632896
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1592230911398044}
+  m_GameObject: {fileID: 1588570712092172}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -58,7 +86,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 36f1eeedd5268154e850cc7d52e39787, type: 3}
+  - {fileID: 2100000, guid: b40396c41d0491449954ab5dfa4a5a69, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -78,40 +106,21 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33360604427601260
+--- !u!33 &33637496178174868
 MeshFilter:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1592230911398044}
-  m_Mesh: {fileID: 4300000, guid: 36f1eeedd5268154e850cc7d52e39787, type: 3}
---- !u!95 &95466832626542992
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1592230911398044}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d6a1cdce596e7493b8ff3683b6e329fc, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114707743217246728
+  m_GameObject: {fileID: 1588570712092172}
+  m_Mesh: {fileID: 4300000, guid: b367abfce5b83d34283be05c734e828a, type: 3}
+--- !u!114 &114708953815783394
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1592230911398044}
+  m_GameObject: {fileID: 1437143176842484}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f14766d47046e4b0db9216aac39132ad, type: 3}
+  m_Script: {fileID: 11500000, guid: ae972364f28d248b4bdb79ed5ee5e2cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  KindofCoin: 1
