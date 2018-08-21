@@ -9,26 +9,41 @@ public class VMManager : MonoBehaviour {
 	[SerializeField] private GameObject[] canList;
 	[SerializeField] private Text[] keyText;
 	private GameObject canEntryPoint;
-	private string[] keys = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"};
-	private int[] priceList = {100, 120, 130, 150, 160 ,200};
 	private int num_q;
-	private int price;
-	private GameObject can;
+
+	private struct Can {
+		public string key;
+		public int price;
+
+		public Can(string k, int p){
+			key = k;
+			price = p;
+		}
+	}
+
+	Can[] product = new Can[4];
 
 	// Use this for initialization
 	void Start () {
 		moneyManagerScript = GameObject.Find("GameManager").GetComponent<MoneyManager>();
 		canEntryPoint = GameObject.Find("CanEntryPoint");
+
+		product[0] = new Can("a", 130);
+		product[1] = new Can("s", 100);
+		product[2] = new Can("d", 200);
+		product[3] = new Can("f", 160);
+
+
 		SetProduct();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		// 指定キーの入力で商品を購入
-		if(Input.GetKeyDown(keys[num_q])){
-			if(moneyManagerScript.GetMoney() >= price) {
-				moneyManagerScript.AddMoney(-price);
-				Instantiate(can, canEntryPoint.transform.position, Quaternion.identity);
+		if(Input.GetKeyDown(product[num_q].key)){
+			if(moneyManagerScript.GetMoney() >= product[num_q].price) {
+				moneyManagerScript.AddMoney(-product[num_q].price);
+				Instantiate(canList[num_q], canEntryPoint.transform.position, Quaternion.identity);
 				SetProduct();
 			}
 		}
@@ -36,17 +51,11 @@ public class VMManager : MonoBehaviour {
 	
 	private void  SetProduct(){
 		// 購入キーの設定
-		num_q= Random.Range(0,keys.Length);
-
-		// 商品の金額設定
-		price = priceList[Random.Range(0,priceList.Length)];
-
-		// 商品の種類を設定
-		can = canList[Random.Range(0, canList.Length)];
+		num_q= Random.Range(0,product.Length);
 
 		// 表示
 		for(int i = 0; i < keyText.Length; i++){
-			keyText[i].text = "Press " + keys[num_q] + "\n¥" + price;
+			keyText[i].text = "Press " + product[num_q].key + "\n¥" + product[num_q].price;
 		}
 	}
 }
