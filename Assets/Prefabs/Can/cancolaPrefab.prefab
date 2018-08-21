@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4646977779845570}
   - component: {fileID: 114083576322841708}
+  - component: {fileID: 95387276532276762}
   m_Layer: 0
   m_Name: cancolaPrefab
   m_TagString: Untagged
@@ -50,13 +51,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1333486970607938}
-  m_LocalRotation: {x: -0.6122656, y: -0.3536151, z: -0.3534917, w: 0.6124793}
+  m_LocalRotation: {x: -0.62288386, y: -0.33468756, z: -0.33468756, w: 0.62288386}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 20, y: 20.000011, z: 60}
   m_Children: []
   m_Father: {fileID: 4646977779845570}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -89.98, y: -60, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: -56.5, z: 0}
 --- !u!4 &4646977779845570
 Transform:
   m_ObjectHideFlags: 1
@@ -64,8 +65,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1009105009269162}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -1.63, y: -3.15, z: -0.1199999}
+  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children:
   - {fileID: 4535622536934418}
   m_Father: {fileID: 0}
@@ -113,6 +114,24 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1333486970607938}
   m_Mesh: {fileID: 4300000, guid: b367abfce5b83d34283be05c734e828a, type: 3}
+--- !u!95 &95387276532276762
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1009105009269162}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8836d906902cd4672a74790be9470f23, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114083576322841708
 MonoBehaviour:
   m_ObjectHideFlags: 1
