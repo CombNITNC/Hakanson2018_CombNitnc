@@ -10,9 +10,22 @@ public class GameManager : MonoBehaviour {
 	[SerializeField] GameObject coin10;
 	[SerializeField] Text TextTime;
 	[SerializeField] Text TextScore;
+	[SerializeField] Text TextResidueCan;
+	[SerializeField] Text TextLevel;
+
+	private int[,] levelList = {
+		{100,2},
+		{100,3},
+		{100,4},
+		{100,2},
+		{100,3},
+		{100,4},
+	};
 
 
 	private float timer;
+	private int noruma;
+	private int level;
 
 	// Use this for initialization
 	void Start () {
@@ -20,7 +33,8 @@ public class GameManager : MonoBehaviour {
 		scriptVMManager = GameObject.Find("VMmain").GetComponent<VMManager>();
 		scriptMoneyManager.ChangeMoney(100);
 
-		timer = 100;
+		level = 0;
+		LevelUp();
 		DrawTime();
 	}
 	
@@ -42,7 +56,7 @@ public class GameManager : MonoBehaviour {
 
 		timer -= Time.deltaTime;
 		DrawTime();
-		DrawScore();
+		ScoreManager();
 	}
 
 	private void DrawTime(){
@@ -51,7 +65,21 @@ public class GameManager : MonoBehaviour {
 		TextTime.text = "残り: " + min.ToString() + "分"  + sec.ToString() + "秒";
 	}
 
-	private void DrawScore(){
-		TextScore.text = "あなたは　" + scriptVMManager.GetCount().ToString() + "本買った";
+	private void ScoreManager(){
+		int score = scriptVMManager.GetCount();
+		int residue = noruma - score;
+
+		if(residue == 0) LevelUp();
+
+		TextScore.text = "あなたは: " + score.ToString() + "本買った";
+		TextResidueCan.text = "残り: " + residue.ToString() + "本";
+	}
+
+	private void LevelUp(){
+		level++;
+		timer = levelList[level-1,0];
+		noruma += levelList[level-1,1];
+
+		TextLevel.text = "Level: "+ level.ToString();
 	}
 }
