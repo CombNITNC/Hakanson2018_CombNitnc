@@ -16,7 +16,12 @@ public class GameManager : MonoBehaviour {
 	[SerializeField] GameObject title;
 	GameObject gameOver;
 	private int[,] levelList = {
-		{10,2},
+		{30,1},
+		{30,3},
+		{30,5},
+		{20,2},
+		{20,4},
+		{20,6},
 		{10,3},
 		{10,4},
 		{10,5},
@@ -25,7 +30,6 @@ public class GameManager : MonoBehaviour {
 		{10,8},
 		{10,9},
 		{10,10},
-		{10,11},
 	};
 
 
