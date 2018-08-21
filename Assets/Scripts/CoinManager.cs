@@ -9,12 +9,14 @@ public class CoinManager : MonoBehaviour {
 		none,
 	}
 	[SerializeField] CoinList KindofCoin = CoinList.none;
+	private AudioSource[] se;
 
 	private MoneyManager moneyManagerScript;
 	
 	// Use this for initialization
 	void Start () {
 		moneyManagerScript = GameObject.Find("GameManager").GetComponent<MoneyManager>();
+		se = gameObject.GetComponents<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -35,5 +37,9 @@ public class CoinManager : MonoBehaviour {
 		}
 
 		Destroy(this.gameObject);
+	}
+
+	public void PlaySE(){
+		se[0].Play();
 	}
 }

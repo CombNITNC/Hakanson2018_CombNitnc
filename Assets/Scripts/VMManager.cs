@@ -47,6 +47,7 @@ public class VMManager : MonoBehaviour {
 	void Update () {
 		if(scriptGameManager.gameFlag){
 			for(int i = 0; i < product.Length; i++){
+				Debug.Log(product[i].key);
 				if(Input.GetKeyDown(product[i].key)){
 					if(scriptMoneyManager.GetMoney() >= product[i].price) {
 						scriptMoneyManager.AddMoney(-product[i].price);
