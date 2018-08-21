@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class VMManager : MonoBehaviour {
 	private MoneyManager moneyManagerScript;
+	
 	[SerializeField] private GameObject can;
 	private GameObject canEntryPoint;
 	// Use this for initialization
