@@ -41,7 +41,6 @@ sysinfo.txt
 Temp/
 Obj/
 UnityGenerated/
-Library/
 
 # ===================================== #
 # Visual Studio / MonoDevelop generated #
@@ -80,4 +79,4 @@ Assets/Scenes/Work_BACKUP_56447.unity.meta
 Assets/Scenes/Work_BASE_56447.unity.meta
 Assets/Scenes/Work_LOCAL_56447.unity.meta
 Assets/Scenes/Work_REMOTE_56447.unity.meta
-Library/CurrentLayout.dwlt
+
