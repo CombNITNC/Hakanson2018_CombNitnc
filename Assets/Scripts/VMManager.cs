@@ -22,7 +22,7 @@ public class VMManager : MonoBehaviour {
 		}
 	}
 
-	Can[] product = new Can[4];
+	[SerializeField] Can[] product = new Can[6];
 
 	// Use this for initialization
 	void Start () {
@@ -33,6 +33,8 @@ public class VMManager : MonoBehaviour {
 		product[1] = new Can("s", 100);
 		product[2] = new Can("d", 200);
 		product[3] = new Can("f", 160);
+		product[4] = new Can("z", 120);
+		product[5] = new Can("x", 300);
 
 
 		SetProduct();

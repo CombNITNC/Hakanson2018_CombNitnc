@@ -1542,6 +1542,8 @@ MonoBehaviour:
   - {fileID: 1488511131977746, guid: 4ba53744d98474ab4a384b466dc802f0, type: 2}
   - {fileID: 1437143176842484, guid: d7be0a5472a45474c9de4b8050f1ab25, type: 2}
   - {fileID: 1281057992034198, guid: 10319999139cf464792b47edc596c335, type: 2}
+  - {fileID: 1235652697108202, guid: 04f0be40009df4981933c4ef29ad8de7, type: 2}
+  - {fileID: 1780116142599766, guid: 163461752c84a492693f56ab0567f75d, type: 2}
   keyText:
   - {fileID: 383932745}
   - {fileID: 1347673723}
