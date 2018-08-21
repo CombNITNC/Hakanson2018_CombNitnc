@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4361537913487642}
   - component: {fileID: 114708953815783394}
+  - component: {fileID: 95018322558353378}
   m_Layer: 0
   m_Name: canNonsterPrefab
   m_TagString: Untagged
@@ -50,13 +51,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1588570712092172}
-  m_LocalRotation: {x: -0.6122656, y: -0.3536151, z: -0.3534917, w: 0.6124793}
+  m_LocalRotation: {x: -0.6329788, y: -0.31501207, z: -0.31490213, w: 0.63319975}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 20, y: 20.000011, z: 60}
   m_Children: []
   m_Father: {fileID: 4361537913487642}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -89.98, y: -60, z: 0}
+  m_LocalEulerAnglesHint: {x: -89.98, y: -52.9, z: 0}
 --- !u!4 &4361537913487642
 Transform:
   m_ObjectHideFlags: 1
@@ -64,7 +65,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1437143176842484}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -1.63, y: -3.15, z: -0.1199999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4350445463438396}
@@ -113,6 +114,24 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1588570712092172}
   m_Mesh: {fileID: 4300000, guid: b367abfce5b83d34283be05c734e828a, type: 3}
+--- !u!95 &95018322558353378
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1437143176842484}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7156816c566bb44b9aed3eb76c346db3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114708953815783394
 MonoBehaviour:
   m_ObjectHideFlags: 1
