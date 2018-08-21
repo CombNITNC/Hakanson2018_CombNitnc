@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class VMManager : MonoBehaviour {
 	private MoneyManager scriptMoneyManager;
-
+	private GameManager scriptGameManager;
 	[SerializeField] private GameObject[] canList;
 	[SerializeField] private Text[] keyText;
 	private GameObject canEntryPoint;
@@ -29,6 +29,7 @@ public class VMManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		scriptMoneyManager = GameObject.Find("GameManager").GetComponent<MoneyManager>();
+		scriptGameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
 		canEntryPoint = GameObject.Find("CanEntryPoint");
 		count = 0;
 		product[0] = new Can("a", 130);
@@ -44,16 +45,18 @@ public class VMManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		for(int i = 0; i < product.Length; i++){
-			if(Input.GetKeyDown(product[i].key)){
-				if(scriptMoneyManager.GetMoney() >= product[i].price) {
-					scriptMoneyManager.AddMoney(-product[i].price);
-					Instantiate(canList[i], canEntryPoint.transform.position, Quaternion.identity);
-					
-					// 指定キーの入力で商品を購入
-					if(i == num_q){
-						count++;
-						num_oldq = SetProduct();
+		if(scriptGameManager.gameFlag){
+			for(int i = 0; i < product.Length; i++){
+				if(Input.GetKeyDown(product[i].key)){
+					if(scriptMoneyManager.GetMoney() >= product[i].price) {
+						scriptMoneyManager.AddMoney(-product[i].price);
+						Instantiate(canList[i], canEntryPoint.transform.position, Quaternion.identity);
+						
+						// 指定キーの入力で商品を購入
+						if(i == num_q){
+							count++;
+							num_oldq = SetProduct();
+						}
 					}
 				}
 			}
