@@ -6,7 +6,7 @@ using System;
 
 public class MoneyManager : MonoBehaviour {
 	private int money;
-	[SerializeField] private Text textMoney;
+	[SerializeField] private Text[] textMoney;
 
 	// Use this for initialization
 	void Start () {
@@ -33,6 +33,8 @@ public class MoneyManager : MonoBehaviour {
 	}
 
 	private void Draw(){
-		textMoney.text = "¥" + money.ToString();
-	}
+		for(int i = 0; i< textMoney.Length; i++){	
+			textMoney[i].text = "¥" + money.ToString();
+		}
+	}	
 }
