@@ -10,6 +10,7 @@ public class VMManager : MonoBehaviour {
 	[SerializeField] private Text[] keyText;
 	private GameObject canEntryPoint;
 	private int num_q;
+	private int count;
 
 	private struct Can {
 		public string key;
@@ -27,7 +28,7 @@ public class VMManager : MonoBehaviour {
 	void Start () {
 		moneyManagerScript = GameObject.Find("GameManager").GetComponent<MoneyManager>();
 		canEntryPoint = GameObject.Find("CanEntryPoint");
-
+		count = 0;
 		product[0] = new Can("a", 130);
 		product[1] = new Can("s", 100);
 		product[2] = new Can("d", 200);
@@ -39,12 +40,18 @@ public class VMManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		// 指定キーの入力で商品を購入
-		if(Input.GetKeyDown(product[num_q].key)){
-			if(moneyManagerScript.GetMoney() >= product[num_q].price) {
-				moneyManagerScript.AddMoney(-product[num_q].price);
-				Instantiate(canList[num_q], canEntryPoint.transform.position, Quaternion.identity);
-				SetProduct();
+		for(int i = 0; i < product.Length; i++){
+			if(Input.GetKeyDown(product[i].key)){
+				if(moneyManagerScript.GetMoney() >= product[i].price) {
+					moneyManagerScript.AddMoney(-product[i].price);
+					Instantiate(canList[i], canEntryPoint.transform.position, Quaternion.identity);
+					
+					// 指定キーの入力で商品を購入
+					if(i == num_q){
+						count++;
+						SetProduct();
+					}
+				}
 			}
 		}
 	}
@@ -57,5 +64,9 @@ public class VMManager : MonoBehaviour {
 		for(int i = 0; i < keyText.Length; i++){
 			keyText[i].text = "Press " + product[num_q].key + "\n¥" + product[num_q].price;
 		}
+	}
+
+	public int GetCount(){
+		return count;
 	}
 }
