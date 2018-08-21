@@ -118,6 +118,7 @@ public class GameManager : MonoBehaviour {
 		gameFlag = true;
 		level = 0;
 		noruma = 0;
+		scriptVMManager.SetCount(0);
 		LevelUp();
 	}
 }

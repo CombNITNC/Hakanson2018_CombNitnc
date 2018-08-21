@@ -85,4 +85,8 @@ public class VMManager : MonoBehaviour {
 		if(count == null) return 0;
 		return count;
 	}
+
+	public void SetCount(int a){
+		count = a;
+	}
 }
